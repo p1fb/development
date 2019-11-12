@@ -20,4 +20,4 @@ elif [[ "$OSTYPE" == "linux-gnu"* && $(stat -c '%U' "$composer") != 'root' && $(
 fi;
 
 echo "$err_msg";
-exit 1
+exit 0
