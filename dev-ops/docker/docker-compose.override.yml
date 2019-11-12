@@ -10,26 +10,26 @@ services:
       APPLICATION_UID: 33
       APPLICATION_GID: 33
     ports:
-      - "8000:8000"
-      - "8080:8080"
-      - "8005:8005"
-      - "9999:9999"
+      - "${APP_PORT_8000}:8000"
+      - "${APP_PORT_8080}:8080"
+      - "${APP_PORT_8005}:8005"
+      - "${APP_PORT_9999}:9999"
 
   app_mysql:
     ports:
-      - "4406:3306"
+      - "${MYSQL_PORT}:3306"
     volumes:
       - ./dev-ops/docker/_volumes/mysql:/mysql-data
 
   adminer:
     ports:
-      - "8001:8080"
+      - "${ADMINER_PORT}:8080"
 
   mailhog:
     ports:
-      - "8002:8025"
+      - "${MAILHOG_PORT}:8025"
 
   elasticsearch:
     ports:
-      - "9200:9200"
-      - "9300:9300"
+      - "${ELASTIC_PORT_9200}:9200"
+      - "${ELASTIC_PORT_9300}:9300"
